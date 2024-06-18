@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WSFitness</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5; /* Cinza claro */
+            color: #333; /* Cinza escuro */
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Estilos para o cabeçalho */
+        header {
+            background-color: #000; /* Preto */
+            color: #f1c40f; /* Amarelo */
+            padding: 10px 0;
+            border-bottom: 3px solid #f1c40f; /* Amarelo */
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        header .logo {
+            font-size: 2em; /* Tamanho do texto da logo */
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        header nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header nav ul li {
+            margin-right: 20px;
+        }
+        
+        header nav ul li a {
+            color: #f1c40f; /* Amarelo */
+            text-decoration: none;
+            padding: 10px;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave */
+        }
+        
+        header nav ul li a:hover {
+            background-color: #333; /* Cinza escuro */
+            color: #fff; /* Branco */
+        }
+        
+        /* Estilos para seções */
+        section {
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        section h1, section h2 {
+            color: #333; /* Cinza escuro */
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+        
+        .grid .aula, .grid .membro {
+            background-color: #fff; /* Branco */
+            color: #333; /* Cinza escuro */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .grid .aula:hover, .grid .membro:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gallery img {
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Estilos para formulário de contato */
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff; /* Branco */
+            color: #333; /* Cinza escuro */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+        
+        form input:focus, form textarea:focus {
+            border-color: #f1c40f; /* Amarelo */
+        }
+        
+        form button {
+            background-color: #333; /* Cinza escuro */
+            color: #f1c40f; /* Amarelo */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave */
+        }
+        
+        form button:hover {
+            background-color: #444; /* Cinza escuro */
+            color: #fff; /* Branco */
+        }
+        
+        .info {
+            color: #333; /* Cinza escuro */
+        }
+        
+        /* Estilos para a parte inferior preta */
+        .black-section {
+            background-color: #000; /* Preto */
+            color: #fff; /* Branco */
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .black-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .black-section p {
+            margin-bottom: 20px;
+        }
+        
+        .black-section a {
+            color: #f1c40f; /* Amarelo */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .black-section a:hover {
+            color: #fff; /* Branco */
+        }
+
+        /* Estilos responsivos */
+        @media only screen and (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+            
+            header .logo {
+                font-size: 1.5em;
+            }
+            
+            header nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            header nav ul li {
+                margin: 10px 0;
+            }
+            
+            .black-section h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="logo">
+            WS FITNESS
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#aulas">Aulas</a></li>
+                <li><a href="#equipe">Equipe</a></li>
+                <li><a href="#instalacoes">Instalações</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="https://www.instagram.com/wsfitnessacademiaoficial/" target="_blank">Instagram</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section id="home">
+    <div class="container">
+        <h1>Bem-vindo à WSFitness</h1>
+        <p>Descubra como podemos te ajudar a alcançar seus objetivos de fitness.</p>
+        <a href="#aulas" class="btn">Conheça nossas aulas</a>
+    </div>
+</section>
+
+<section id="aulas">
+    <div class="container">
+        <h2>Nossas Aulas</h2>
+        <div class="grid">
+            <div class="aula">
+                <h3>Aula de Yoga</h3>
+                <p>Segunda e Quarta, 18:00 - 19:00</p>
+            </div>
+            <div class="aula">
+                <h3>Aula de CrossFit</h3>
+                <p>Terça e Quinta, 17:00 - 18:00</p>
+            </div>
+            <!-- Adicione mais aulas conforme necessário -->
+        </div>
+    </div>
+</section>
+
+<section id="equipe">
+    <div class="container">
+        <h2>Nossa Equipe</h2>
+        <div class="grid">
+            <div class="membro">
+                <img src="instrutor1.jpg" alt="Instrutor 1">
+                <h3>João Silva</h3>
+                <p>Instrutor de Yoga</p>
+            </div>
+            <div class="membro">
+                <img src="instrutor2.jpg" alt="Instrutor 2">
+                <h3>Maria Souza</h3>
+                <p>Instrutora de CrossFit</p>
+            </div>
+            <!-- Adicione mais membros conforme necessário -->
+        </div>
+    </div>
+</section>
+
+<section id="instalacoes">
+    <div class="container">
+        <h2>Nossas Instalações</h2>
+        <div class="gallery">
+            <img src="instalacao1.jpg" alt="Instalação 1">
+            <img src="instalacao2.jpg" alt="Instalação 2">
+            <!-- Adicione mais imagens conforme necessário -->
+        </div>
+    </div>
+</section>
+
+<section id="contato">
+    <div class="container">
+        <h2>Entre em Contato</h2>
+        <form action="enviar.php" method="POST">
+            <
